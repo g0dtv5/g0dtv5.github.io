@@ -3,50 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ФИО — Сайт-визитка (ЛР по информатике)</title>
+  <title>hahahaha</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Тяптин Владислав</h1>
-        <p class="subtitle">Студент ГУАП | 1 курс, 15.03.06</p>
-        <p class="tagline">Лабораторная работа по информатике — сайт-визитка</p>
+  <!-- Навигационное меню -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Главная</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#portfolio">Портфолио</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Главная секция -->
+    <section id="home" class="hero">
+      <h1>Тятпин Владислав</h1>
+      <p>Студент ГУАП | 1 курс, 15.03.06</p>
+      <p>Лабораторная работа по информатике — сайт-визитка</p>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="section">
+      <h2>Обо мне</h2>
+      <p>
+        Учусь в Санкт-Петербургском государственном университете аэрокосмического приборостроения (ГУАП) 
+        по направлению «Мехатроника и робототехника». Интересуюсь анализом данных, кибербезопасностью 
+        и автоматизацией. Параллельно изучаю Python и основы веб-разработки.
+      </p>
+    </section>
+
+    <!-- Портфолио / Галерея изображений -->
+    <section id="portfolio" class="section">
+      <h2>Портфолио</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/300x200?text=Проект+1" alt="Проект 1">
+          <p>Анализ данных в Python</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/300x200?text=Проект+2" alt="Проект 2">
+          <p>CTF-задачи TryHackMe</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/300x200?text=Проект+3" alt="Проект 3">
+          <p>Автоматизация Excel</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/300x200?text=Проект+4" alt="Проект 4">
+          <p>Визуализация статистики</p>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="section">
-        <h2>Обо мне</h2>
-        <p>
-          Учусь в Санкт-Петербургском государственном университете аэрокосмического приборостроения (ГУАП) 
-          по направлению «Мехатроника и робототехника». Интересуюсь анализом данных, кибербезопасностью и gamedev'ом.
-        </p>
-      </section>
+    <!-- Контакты + Форма обратной связи -->
+    <section id="contact" class="section">
+      <h2>Связаться со мной</h2>
+      <form id="contact-form" class="contact-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required placeholder="Ваше имя">
 
-      <section class="section">
-        <h2>Навыки</h2>
-        <ul class="skills-list">
-          <li>Основы Python</li>
-          <li>Работа с Git и GitHub</li>
-          <li>Базовые знания Linux и сетей</li>
-          <li>Основы Godot и GDScript</li>
-          <li>Базовые знания blender</li>
-        </ul>
-      </section>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.ru">
 
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Ваше сообщение"></textarea>
 
-      <section class="section">
-        <h2>Контакты</h2>
-        <p>📧 <a href="mailto:tyaptinv285@gmail.com">tyaptinv285@gmail.com</a></p>
-        <p>💻 <a href="https://github.com/g0dtv5" target="_blank">github.com/g0dtv5</a></p>
-      </section>
-    </main>
+        <button type="submit">Отправить</button>
+      </form>
 
-    <footer>
-      <p>Лабораторная работа по дисциплине «Информатика» | ГУАП, 2025</p>
-    </footer>
-  </div>
+      <script>
+        // Валидация email (простая проверка на @)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          const email = document.getElementById('email').value;
+          if (!email.includes('@')) {
+            alert('Пожалуйста, введите корректный email.');
+            e.preventDefault();
+          }
+        });
+      </script>
+    </section>
+  </main>
+
+  <!-- Футер -->
+  <footer>
+    <p>&copy; 2025 Тяптин Владислав. Создано для лабораторной работы по информатике.</p>
+    <div class="social-links">
+      <a href="mailto:ivan.ivanov@gap.ru">📧 Email</a>
+      <a href="tel:+79991234567">📞 Телефон</a>
+      <a href="https://github.com/ваш-логин" target="_blank">🐙 GitHub</a>
+    </div>
+  </footer>
 </body>
 </html>

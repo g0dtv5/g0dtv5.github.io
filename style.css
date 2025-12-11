@@ -1,4 +1,4 @@
-/* Сброс и общие настройки */
+/* Общие стили */
 * {
   margin: 0;
   padding: 0;
@@ -6,56 +6,49 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: #222;
   background-color: #f9fbfd;
-  padding: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* Навигация */
+.navbar {
+  background: #1a4780;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Шапка (герой) */
-.hero {
-  background: linear-gradient(135deg, #1a4780 0%, #2a629e 100%);
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar a {
   color: white;
-  padding: 2.5rem 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
 
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+.navbar a:hover,
+.navbar a:focus {
+  background: rgba(255,255,255,0.2);
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  opacity: 0.95;
-  margin-bottom: 0.8rem;
-}
-
-.tagline {
-  font-style: italic;
-  opacity: 0.85;
-  font-size: 0.95rem;
-}
-
-/* Основные секции */
+/* Разделы */
 .section {
+  padding: 2rem;
+  margin-bottom: 2rem;
   background: white;
-  padding: 1.6rem;
-  margin-bottom: 1.8rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid #1a4780;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .section h2 {
@@ -64,83 +57,145 @@ body {
   font-size: 1.4rem;
 }
 
-/* Список навыков */
-.skills-list {
-  padding-left: 1.4rem;
+/* Главная секция */
+.hero {
+  background: linear-gradient(135deg, #1a4780 0%, #2a629e 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.skills-list li {
-  margin-bottom: 0.6rem;
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Проекты */
-.project {
-  margin-bottom: 1.4rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 1px dashed #eee;
+.hero p {
+  opacity: 0.95;
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
 }
 
-.project:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+/* Галерея (CSS Grid) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.project h3 {
-  margin-bottom: 0.4rem;
-  color: #222;
+.gallery-item {
+  background: #f5f7fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.project a {
-  color: #1a4780;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.project a:hover {
-  text-decoration: underline;
-}
-
-/* Кнопка */
-.btn {
-  display: inline-block;
-  background-color: #1a4780;
-  color: white !important;
-  padding: 0.65rem 1.3rem;
+.gallery-item img {
+  width: 100%;
+  height: auto;
   border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  transition: background-color 0.2s;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
 }
 
-.btn:hover {
-  background-color: #0f305a;
-  text-decoration: none !important;
+/* Форма */
+.contact-form {
+  max-width: 500px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a4780;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: #0f305a;
 }
 
 /* Футер */
-footer {
+.footer {
+  background: #1a4780;
+  color: white;
   text-align: center;
+  padding: 1.5rem;
   margin-top: 2rem;
-  padding-top: 1.2rem;
-  color: #666;
-  font-size: 0.9rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Адаптив */
-@media (max-width: 600px) {
-  .hero {
-    padding: 1.8rem 1rem;
+.footer p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.social-links a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
   .hero h1 {
     font-size: 1.8rem;
-  }
-  .container {
-    padding: 15px;
-  }
-  .section {
-    padding: 1.3rem;
   }
 }
