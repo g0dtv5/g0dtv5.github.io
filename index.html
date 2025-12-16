@@ -56,10 +56,16 @@
                        мои проекты более целостными и выразительными. Постоянно ищу возможности для углубления знаний через проекты, 
                        онлайн-курсы и участие в профессиональных сообществах.
                 </p>
-                <div class="skill-graphic">
-                    <img src="adaptive_icon.svg" alt="Адаптивная графика" class="svg-icon">
-                    <p>Адаптивная графика</p>
-                </div>
+                <div class="adaptive-media">
+                    <picture>
+                        <source srcset="desktop-photo.jpg" media="(min-width: 1024px)">
+
+                        <source srcset="tablet-photo.jpg" media="(min-width: 600px)">
+
+                        <source srcset="mobile-photo.jpg" media="(max-width: 599px)">
+
+                        <img src="desktop-photo.jpg" alt="" class="responsive-image">
+                    </picture>
             </div>
         </section>
 
